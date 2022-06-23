@@ -1,3 +1,11 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
 html,
 body {
   padding: 0;
@@ -13,4 +21,77 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* before:w-full before:h-full before:absolute before:top-0 before:right-0 before:bg-faded-blue */
+
+@layer base {
+
+  section {
+    @apply w-full h-fit px-10 py-5  md:px-16 lg:px-24 flex flex-col justify-start items-start gap-5 
+  }
+
+  input , textarea {
+    @apply w-full p-2 normal__text bg-blue-200 rounded 
+  }
+
+}
+
+
+@layer components{
+
+
+  .nav__btn {
+    @apply text-white text-sm 
+  }
+
+  .nav__btn:hover {
+    @apply border-b border-white
+  }
+
+  .selected {
+    @apply text-base font-medium border-b border-white
+  }
+
+  .main__overlay {
+    @apply w-full h-full bg-faded-blue flex flex-col justify-center items-start px-10  md:px-16 lg:px-24 gap-5
+  }
+
+  .main__bg {
+    @apply bg-cover relative bg-center bg-no-repeat 
+  }
+
+  .page__title {
+    @apply  text-5xl font-semibold text-center uppercase
+  }
+
+  .large__text {
+    @apply text-4xl font-semibold
+  }
+
+  .medium__text {
+    @apply text-2xl font-semibold
+  }
+
+  .normal__text {
+    @apply text-sm font-normal
+  }
+
+  .card__title {
+    @apply text-lg font-semibold
+  }
+
+  .primary {
+    @apply bg-main-blue rounded hover:shadow text-white px-6 py-2
+  }
+
+  .section__title {
+    @apply w-full text-center medium__text
+  }
+
+  .mobile__grid {
+    @apply w-full grid grid-cols-1 gap-3
+  }
+  
+
 }
